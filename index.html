@@ -1,1 +1,831 @@
-html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newera Digital Solutions</title>
+  <meta
+    name="description"
+    content="Newera Digital Solutions helps businesses grow online with WhatsApp Business setup, Google Business Profile setup, business card design, and professional website packages."
+  />
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0f1b31;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-strong: rgba(255, 255, 255, 0.1);
+      --text: #f4f7fb;
+      --muted: #b8c3d8;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #22c55e;
+      --accent-dark: #0b1a12;
+      --accent-2: #38bdf8;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      --radius: 18px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 26%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 22%),
+        linear-gradient(180deg, #07101c 0%, #08111f 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #071016;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 17, 31, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(34, 197, 94, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brand-text small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 400;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      top: 78px;
+      background: #0d172b;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 48px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      color: #cdefff;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-stats {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat-card,
+    .service-card,
+    .pricing-card,
+    .about-card,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 18px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-panel {
+      padding: 22px;
+    }
+
+    .hero-panel h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-mini-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-mini-item {
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-mini-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .contact-mini-item span,
+    .contact-mini-item a {
+      color: var(--muted);
+      word-break: break-word;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-card,
+    .pricing-card,
+    .about-card,
+    .contact-card {
+      padding: 22px;
+    }
+
+    .service-icon,
+    .about-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #dff6ff;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(34, 197, 94, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card h3,
+    .pricing-card h3,
+    .about-card h3,
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .service-card p,
+    .pricing-card p,
+    .about-card p,
+    .contact-card p {
+      color: var(--muted);
+    }
+
+    .pricing {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .price {
+      display: inline-block;
+      margin: 14px 0 10px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #90f7b1;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(34, 197, 94, 0.5);
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.12), rgba(255, 255, 255, 0.05));
+    }
+
+    .pricing-card ul {
+      margin-top: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .pricing-card li {
+      color: var(--muted);
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .pricing-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .about-grid,
+    .services-grid,
+    .pricing-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta {
+      padding: 28px 0 64px;
+    }
+
+    .cta-box {
+      padding: 26px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(34, 197, 94, 0.12));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0 36px;
+    }
+
+    .footer-wrap {
+      display: grid;
+      gap: 10px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (min-width: 640px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .services-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 22px;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        padding: 80px 0 48px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr auto;
+        text-align: left;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <div class="brand-badge">NE</div>
+        <div class="brand-text">
+          Newera Digital Solutions
+          <small>Digital services for modern businesses</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/917206757653" target="_blank" class="btn btn-primary">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Grow your business online</span>
+          <h1>Professional digital solutions for your business.</h1>
+          <p>
+            Newera Digital Solutions helps businesses build a strong online presence
+            with WhatsApp Business setup, Google Business Profile setup, business card
+            design, and professional website packages.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/917206757653" target="_blank" class="btn btn-primary">Chat on WhatsApp</a>
+            <a href="#pricing" class="btn btn-secondary">View Packages</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>Affordable Plans</strong>
+              <span>Flexible services for startups and local businesses.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Fast Setup</strong>
+              <span>Quick support to launch your business online.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Complete Support</strong>
+              <span>Profiles, branding, and websites in one place.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel stat-card">
+          <h3>Business Contact</h3>
+          <div class="contact-mini-list">
+            <div class="contact-mini-item">
+              <strong>Phone</strong>
+              <a href="tel:+917206757653">+91 72067 57653</a>
+            </div>
+            <div class="contact-mini-item">
+              <strong>Email</strong>
+              <a href="mailto:digitalsolutionsnewera@gmail.com">digitalsolutionsnewera@gmail.com</a>
+            </div>
+            <div class="contact-mini-item">
+              <strong>Location</strong>
+              <span>Haryana, India</span>
+            </div>
+            <div class="contact-mini-item">
+              <strong>Tagline</strong>
+              <span>Bring your business on the internet with us.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Practical and professional services designed to help your business get found,
+          look credible, and grow online.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="service-card">
+            <div class="service-icon">WA</div>
+            <h3>WhatsApp Business Profile</h3>
+            <p>
+              Setup and optimize your WhatsApp Business profile so customers can reach
+              you easily and trust your brand.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">GB</div>
+            <h3>Google Business Profile</h3>
+            <p>
+              Improve local visibility with a professional Google Business Profile that
+              helps customers discover your business.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">BC</div>
+            <h3>Business Card Design</h3>
+            <p>
+              Clean and professional visiting card designs that strengthen your business
+              identity and presentation.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">WD</div>
+            <h3>Website Development</h3>
+            <p>
+              Modern business websites built to present your services clearly and help
+              customers contact you quickly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Pricing & Packages</h2>
+        <p class="section-subtitle">
+          Straightforward packages for businesses that want reliable digital setup and
+          website services.
+        </p>
+
+        <div class="grid pricing-grid">
+          <article class="pricing-card">
+            <h3>WhatsApp Business Profile</h3>
+            <span class="price">₹999</span>
+            <p>Professional setup for your WhatsApp Business profile.</p>
+            <ul>
+              <li>Business profile setup</li>
+              <li>Basic information update</li>
+              <li>Professional presentation</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Google Business Profile</h3>
+            <span class="price">₹999</span>
+            <p>Professional setup for your Google Business presence.</p>
+            <ul>
+              <li>Profile creation support</li>
+              <li>Business info setup</li>
+              <li>Improved local visibility</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Business Cards</h3>
+            <span class="price">₹199</span>
+            <p>Custom business or visiting card design for your brand.</p>
+            <ul>
+              <li>Professional card layout</li>
+              <li>Custom details included</li>
+              <li>Ready-to-use design</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card featured">
+            <h3>Website A</h3>
+            <span class="price">₹3,999</span>
+            <p>Starter business website package.</p>
+            <ul>
+              <li>Professional business website</li>
+              <li>Free domain and hosting</li>
+              <li>Ideal for small businesses</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Website A+</h3>
+            <span class="price">₹8,999</span>
+            <p>Advanced website package with expanded features.</p>
+            <ul>
+              <li>Custom business website</li>
+              <li>Custom domain support</li>
+              <li>More flexibility and scale</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Website A++</h3>
+            <span class="price">₹20,000</span>
+            <p>Premium website package for larger business needs.</p>
+            <ul>
+              <li>Premium business website</li>
+              <li>Best for bigger requirements</li>
+              <li>Professional online presence</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">Why Choose Newera</h2>
+        <p class="section-subtitle">
+          We focus on simple, useful, and business-friendly digital solutions.
+        </p>
+
+        <div class="grid about-grid">
+          <article class="about-card">
+            <div class="about-icon">01</div>
+            <h3>Professional Presentation</h3>
+            <p>
+              We help your business look more trustworthy online with clear branding and
+              polished digital assets.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="about-icon">02</div>
+            <h3>Budget-Friendly Service</h3>
+            <p>
+              Our pricing is suitable for local businesses, startups, and entrepreneurs
+              who want value without complexity.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="about-icon">03</div>
+            <h3>Mobile-First Experience</h3>
+            <p>
+              The websites and layouts are designed to work smoothly on mobile, tablet,
+              and desktop devices.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">
+          Ready to put your business online? Contact Newera Digital Solutions today.
+        </p>
+
+        <div class="grid contact-grid">
+          <article class="contact-card">
+            <h3>Call Us</h3>
+            <p>Speak directly about your service or website requirement.</p>
+            <br />
+            <a href="tel:+917206757653" class="btn btn-secondary">+91 72067 57653</a>
+          </article>
+
+          <article class="contact-card">
+            <h3>Email Us</h3>
+            <p>Send your business details and service requirement by email.</p>
+            <br />
+            <a href="mailto:digitalsolutionsnewera@gmail.com" class="btn btn-secondary">Send Email</a>
+          </article>
+
+          <article class="contact-card">
+            <h3>Location</h3>
+            <p>Serving businesses from Haryana, India.</p>
+            <br />
+            <a
+              href="https://www.google.com/maps/search/Haryana,+India"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              View Location
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Bring your business on the internet with us.</h2>
+          <p>
+            Get started with a business profile, digital branding, or a professional website.
+          </p>
+          <div class="cta-actions">
+            <a href="https://wa.me/917206757653" target="_blank" class="btn btn-primary">Start on WhatsApp</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Newera Digital Solutions. All rights reserved.</p>
+      <p>Haryana, India</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", !expanded);
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 900) {
+          navLinks.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
